@@ -52,12 +52,20 @@ contract Mapping {
     // mapping(KeyType => ValueType) mappingName;
 
     mapping (address => uint) public myMap;
+    //The mapping is defined as mapping (address => uint) public myMap;, which means that it 
+    //maps an address to a uint. The public keyword makes the mapping accessible from outside 
+    //the contract.
+
 
     function get (address _addr) public view returns (uint) {
         // Mapping always returns a value.
         // If the value was never set, it will return the default value.
         // The default value for uint is 0
         return myMap[_addr];
+        //Inside the get function, myMap[_addr] is used to access the value associated with the 
+        //provided address. If a value exists for that address in the mapping, it will be returned. 
+        //If the value was never set for that address, the default value for uint (which is 0) will 
+        //be returned.
     }
 }
 
