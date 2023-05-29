@@ -45,4 +45,22 @@ contract MyContract {
    //It's important to note that functions with a return type in Solidity must include the return statement to 
    //specify the value that will be returned. Functions without a return type (void functions) don't require a return statement.
 
+---------------------------------------------------------------------------------------------------------------
 
+contract Mapping {
+    // Mapping use this sintax:
+    // mapping(KeyType => ValueType) mappingName;
+
+    mapping (address => uint) public myMap;
+
+    function get (address _addr) public view returns (uint) {
+        // Mapping always returns a value.
+        // If the value was never set, it will return the default value.
+        // The default value for uint is 0
+        return myMap[_addr];
+    }
+}
+
+contract NestedMappings {
+    // Mapping from address => (mapping from uint to bool)
+    mapping(address => mapping(uint => bool)) public nestedMap;
